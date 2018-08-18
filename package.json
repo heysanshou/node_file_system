@@ -8,6 +8,8 @@
     "eslint": "^5.4.0"
   },
   "devDependencies": {
+    "babel-eslint": "^8.2.6",
+    "eslint": "^5.4.0",
     "pre-commit": "^1.2.2"
   },
   "scripts": {
