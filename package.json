@@ -1,0 +1,32 @@
+{
+  "name": "node_file_system",
+  "version": "1.0.0",
+  "description": "Simple file system by node.js",
+  "main": "index.js",
+  "dependencies": {
+    "babel-eslint": "^8.2.6",
+    "eslint": "^5.4.0"
+  },
+  "devDependencies": {
+    "pre-commit": "^1.2.2"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint .",
+    "fix": "eslint --fix ."
+  },
+  "pre-commit": [
+    "fix",
+    "lint"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/heysanshou/node_file_system.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/heysanshou/node_file_system/issues"
+  },
+  "homepage": "https://github.com/heysanshou/node_file_system#readme"
+}
