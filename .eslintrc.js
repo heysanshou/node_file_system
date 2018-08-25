@@ -1,11 +1,13 @@
 module.exports = {
     "env": {
-        "browser": true,
-        "es6": true
+        "node": true,
+        "es6": true,
+        "mocha":true
     },
     "extends": "eslint:recommended",
     "parserOptions": {
-        "ecmaVersion": 2016
+        "ecmaVersion":2016,
+        "sourceType":"script"
     },
     "rules": {
         "indent": [
@@ -18,7 +20,7 @@ module.exports = {
         ],
         "quotes": [
             "error",
-            "double"
+            "single"
         ],
         "semi": [
             "error",
