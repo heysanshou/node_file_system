@@ -1,22 +1,25 @@
-const http = require('http');
-const chalk = require('chalk');
-const conf = require('./config/app');
-const path = require('path');
-const route = require('./helper/route');
+const yargs = require('yargs');
+const Server = require('./boot');
 
-const hostname = conf.hostname;
-const port = conf.port;
+const argv = yargs.usage('anwhere [options]')
+    .option('p',{
+        alias: 'port',
+        describe: '端口号',
+        default: 3333
+    }).option('h',{
+        alias: 'hostname',
+        describe: '主机名',
+        default: '0.0.0.0'
+    }).option('d',{
+        alias: 'root',
+        describe: '根目录',
+        default: process.cwd()
+    })
+    .version()
+    .alias('v','version')
+    .help()
+    .argv;
 
-const server = http.createServer((req,res) => {
-    const filePath = path.join(__dirname,req.url);
-    console.log(chalk.red(filePath));
 
-    console.log(chalk.green(conf.root));
-
-    route(req,res,filePath);
-});
-
-server.listen(port , hostname, () => {
-    const str = 'server runing!';
-    console.log(chalk.green(str));
-});
+const server = new Server(argv);
+server.start();
